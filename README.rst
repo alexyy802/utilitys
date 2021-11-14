@@ -1,4 +1,4 @@
-.. image:: logo.png?raw=true
+.. image:: logo.jpg
     :align: center
 
 audio
