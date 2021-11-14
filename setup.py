@@ -55,12 +55,12 @@ with open(ROOT / 'audio' / '__init__.py', encoding='utf-8') as f:
 
 setuptools.setup(
     name='audio',
-    author='EvieePy',
-    url='https://github.com/EvieePy/audio',
+    author='pycord',
+    url='https://github.com/pycord/audio',
     version=VERSION,
     packages=['audio'],
     license='MIT',
-    description='A versatile LavaLink wrapper for Discord.py',
+    description='Music and Voice recording for pycord',
     long_description=README,
     include_package_data=True,
     install_requires=REQUIREMENTS,
@@ -69,12 +69,13 @@ setuptools.setup(
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Topic :: Internet',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
     ],
-    python_requires='>=3.7'
+    python_requires='>=3.8'
 )
