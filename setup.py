@@ -62,7 +62,7 @@ setuptools.setup(
     author="pycord",
     url="https://github.com/pycord/audio",
     version=VERSION,
-    packages=["audio"],
+    packages=["pycord.audio"],
     license="MIT",
     description="Music and Voice recording for pycord",
     long_description=README,
