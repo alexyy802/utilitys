@@ -78,7 +78,7 @@ class FileSink(Sink):
         self.vc = None
         self.audio_data: typing.Dict[int, AudioData] = {}
         if tempfolder is MISSING:
-            tempfolder = tempfile.gettempdir() + "/nextcord/voicerecs/pcmtemps"
+            tempfolder = tempfile.gettempdir() + "/pycord/voicerecs/pcmtemps"
         tempfolder = os.path.abspath(tempfolder + "/" + hex(id(self)))
         rint = str(random.randint(-100000, 100000))
         maxcounter = 5
@@ -142,5 +142,5 @@ def cleanuptempdir(tempfolder: Optional[os.PathLike] = MISSING):
     .. versionadded:: 2.0
     """
     if tempfolder is MISSING:
-        tempfolder = tempfile.gettempdir() + "/nextcord/voicerecs/pcmtemps"
+        tempfolder = tempfile.gettempdir() + "/pycord/voicerecs/pcmtemps"
     shutil.rmtree(tempfolder, ignore_errors=True)
