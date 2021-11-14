@@ -1,7 +1,6 @@
-MIT License
+"""MIT License
 
 Copyright (c) 2019-2020 PythonistaGuild
-Copyright (c) 2021 pycord
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,3 +19,28 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+
+
+class audioException(Exception):
+    """Base audio Exception."""
+
+
+class NodeOccupied(audioException):
+    """Exception raised when node identifiers conflict."""
+
+
+class InvalidIDProvided(audioException):
+    """Exception raised when an invalid ID is passed somewhere in audio."""
+
+
+class ZeroConnectedNodes(audioException):
+    """Exception raised when an operation is attempted with nodes, when there are None connected."""
+
+
+class AuthorizationFailure(audioException):
+    """Exception raised when an invalid password is provided toa node."""
+
+
+class BuildTrackError(audioException):
+    """Exception raised when a track is failed to be decoded and re-built."""

@@ -1,6 +1,6 @@
 .. image:: logo.jpg
     :align: center
 
-audio
+Audio
 =====
 Voice Recording And Music Playing Plugin For Pycord
