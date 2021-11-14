@@ -1,6 +1,6 @@
 """MIT License
 
-Copyright (c) 2019-2020 PythonistaGuild
+Copyright (c) 2021 Pycord
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
+class ListeningException(ClientException):
+    """Exception that's thrown when there is an error while trying to listening to
+    audio from a voice channel.
+    """
+    pass
+
+
+class NotConnected(ListeningException):
+    """Exception that's thrown when trying to listen while not connected"""
+    pass
+
+
+class AlreadyListening(ListeningException):
+    """Exception that's thrown when trying to listen while already listening"""
+    pass
+
+
+class NotListening(ListeningException):
+    """Exception that's thrown when trying to stop/pause listening without listening"""
+    pass
+
+
+class MissingSink(ListeningException):
+    """Exception that's thrown when trying to listen whithout a valid Sink Object"""
+    pass
 
 class audioException(Exception):
     """Base audio Exception."""
