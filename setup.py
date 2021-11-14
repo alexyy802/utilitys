@@ -31,51 +31,55 @@ import setuptools
 
 
 ROOT = pathlib.Path(__file__).parent
-ON_RTD = os.getenv('READTHEDOCS') == 'True'
+ON_RTD = os.getenv("READTHEDOCS") == "True"
 
 
-with open(ROOT / 'requirements.txt', encoding='utf-8') as f:
+with open(ROOT / "requirements.txt", encoding="utf-8") as f:
     REQUIREMENTS = f.readlines()
 
 if ON_RTD:
-    REQUIREMENTS.extend((
-        'pygments',
-        'sphinx==1.7.4',
-        'sphinxcontrib-asyncio',
-        'sphinxcontrib-napoleon',
-        'sphinxcontrib-websupport',
-    ))
+    REQUIREMENTS.extend(
+        (
+            "pygments",
+            "sphinx==1.7.4",
+            "sphinxcontrib-asyncio",
+            "sphinxcontrib-napoleon",
+            "sphinxcontrib-websupport",
+        )
+    )
 
-with open(ROOT / 'README.rst', encoding='utf-8') as f:
+with open(ROOT / "README.rst", encoding="utf-8") as f:
     README = f.read()
 
-with open(ROOT / 'pycord' / 'audio' / '__init__.py', encoding='utf-8') as f:
-    VERSION = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
+with open(ROOT / "pycord" / "audio" / "__init__.py", encoding="utf-8") as f:
+    VERSION = re.search(
+        r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE
+    ).group(1)
 
 
 setuptools.setup(
-    name='audio',
-    author='pycord',
-    url='https://github.com/pycord/audio',
+    name="audio",
+    author="pycord",
+    url="https://github.com/pycord/audio",
     version=VERSION,
-    packages=['audio'],
-    license='MIT',
-    description='Music and Voice recording for pycord',
+    packages=["audio"],
+    license="MIT",
+    description="Music and Voice recording for pycord",
     long_description=README,
     include_package_data=True,
     install_requires=REQUIREMENTS,
     classifiers=[
-        'License :: OSI Approved :: MIT License',
-        'Intended Audience :: Developers',
-        'Natural Language :: English',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Topic :: Internet',
-        'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Utilities',
+        "License :: OSI Approved :: MIT License",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Topic :: Internet",
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: Utilities",
     ],
-    python_requires='>=3.8'
+    python_requires=">=3.8",
 )

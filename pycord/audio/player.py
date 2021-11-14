@@ -32,7 +32,7 @@ from .eqs import *
 from .events import *
 
 
-__all__ = ('Track', 'TrackPlaylist', 'Player')
+__all__ = ("Track", "TrackPlaylist", "Player")
 __log__ = logging.getLogger(__name__)
 
 
@@ -65,34 +65,40 @@ class Track:
         The thumbnail URL associated with the track. Could be None.
     """
 
-    __slots__ = ('id',
-                 'info',
-                 'query',
-                 'title',
-                 'identifier',
-                 'ytid',
-                 'length',
-                 'duration',
-                 'uri',
-                 'author',
-                 'is_stream',
-                 'dead',
-                 'thumb')
+    __slots__ = (
+        "id",
+        "info",
+        "query",
+        "title",
+        "identifier",
+        "ytid",
+        "length",
+        "duration",
+        "uri",
+        "author",
+        "is_stream",
+        "dead",
+        "thumb",
+    )
 
     def __init__(self, id_, info: dict, query: str = None):
         self.id = id_
         self.info = info
         self.query = query
 
-        self.title = info.get('title')
-        self.identifier = info.get('identifier', '')
-        self.ytid = self.identifier if re.match(r"^[a-zA-Z0-9_-]{11}$", self.identifier) else None
-        self.length = info.get('length')
+        self.title = info.get("title")
+        self.identifier = info.get("identifier", "")
+        self.ytid = (
+            self.identifier
+            if re.match(r"^[a-zA-Z0-9_-]{11}$", self.identifier)
+            else None
+        )
+        self.length = info.get("length")
         self.duration = self.length
-        self.uri = info.get('uri')
-        self.author = info.get('author')
+        self.uri = info.get("uri")
+        self.author = info.get("author")
 
-        self.is_stream = info.get('isStream')
+        self.is_stream = info.get("isStream")
         self.dead = False
 
         if self.ytid:
@@ -121,7 +127,9 @@ class TrackPlaylist:
 
     def __init__(self, data: dict):
         self.data = data
-        self.tracks = [Track(id_=track['track'], info=track['info']) for track in data['tracks']]
+        self.tracks = [
+            Track(id_=track["track"], info=track["info"]) for track in data["tracks"]
+        ]
 
 
 class Player:
@@ -143,7 +151,13 @@ class Player:
         The channel the player is connected to. Could be None if the player is not connected.
     """
 
-    def __init__(self, bot: Union[commands.Bot, commands.AutoShardedBot], guild_id: int, node, **kwargs):
+    def __init__(
+        self,
+        bot: Union[commands.Bot, commands.AutoShardedBot],
+        guild_id: int,
+        node,
+        **kwargs,
+    ):
         self.bot = bot
         self.guild_id = guild_id
         self.node = node
@@ -207,25 +221,21 @@ class Player:
         return min(position, self.current.duration)
 
     async def update_state(self, state: dict) -> None:
-        state = state['state']
+        state = state["state"]
 
         self.last_update = time.time() * 1000
-        self.last_position = state.get('position', 0)
-        self.position_timestamp = state.get('time', 0)
+        self.last_position = state.get("position", 0)
+        self.position_timestamp = state.get("time", 0)
 
     async def _voice_server_update(self, data) -> None:
-        self._voice_state.update({
-            'event': data
-        })
+        self._voice_state.update({"event": data})
 
         await self._dispatch_voice_update()
 
     async def _voice_state_update(self, data) -> None:
-        self._voice_state.update({
-            'sessionId': data['session_id']
-        })
+        self._voice_state.update({"sessionId": data["session_id"]})
 
-        channel_id = data['channel_id']
+        channel_id = data["channel_id"]
 
         if not channel_id:  # We're disconnecting
             self.channel_id = None
@@ -236,9 +246,11 @@ class Player:
         await self._dispatch_voice_update()
 
     async def _dispatch_voice_update(self) -> None:
-        __log__.debug(f'PLAYER | Dispatching voice update:: {self.channel_id}')
-        if {'sessionId', 'event'} == self._voice_state.keys():
-            await self.node._send(op='voiceUpdate', guildId=str(self.guild_id), **self._voice_state)
+        __log__.debug(f"PLAYER | Dispatching voice update:: {self.channel_id}")
+        if {"sessionId", "event"} == self._voice_state.keys():
+            await self.node._send(
+                op="voiceUpdate", guildId=str(self.guild_id), **self._voice_state
+            )
 
     async def hook(self, event) -> None:
         if isinstance(event, TrackEnd) and not self._new_track:
@@ -269,11 +281,13 @@ class Player:
         """
         guild = self.bot.get_guild(self.guild_id)
         if not guild:
-            raise InvalidIDProvided(f'No guild found for id <{self.guild_id}>')
+            raise InvalidIDProvided(f"No guild found for id <{self.guild_id}>")
 
         self.channel_id = channel_id
-        await self._get_shard_socket(guild.shard_id).voice_state(self.guild_id, str(channel_id), self_deaf=self_deaf)
-        __log__.info(f'PLAYER | Connected to voice channel:: {self.channel_id}')
+        await self._get_shard_socket(guild.shard_id).voice_state(
+            self.guild_id, str(channel_id), self_deaf=self_deaf
+        )
+        __log__.info(f"PLAYER | Connected to voice channel:: {self.channel_id}")
 
     async def disconnect(self, *, force: bool = False) -> None:
         """|coro|
@@ -286,13 +300,15 @@ class Player:
             return
 
         if not guild:
-            raise InvalidIDProvided(f'No guild found for id <{self.guild_id}>')
+            raise InvalidIDProvided(f"No guild found for id <{self.guild_id}>")
 
-        __log__.info(f'PLAYER | Disconnected from voice channel:: {self.channel_id}')
+        __log__.info(f"PLAYER | Disconnected from voice channel:: {self.channel_id}")
         self.channel_id = None
         await self._get_shard_socket(guild.shard_id).voice_state(self.guild_id, None)
 
-    async def play(self, track: Track, *, replace: bool = True, start: int = 0, end: int = 0) -> None:
+    async def play(
+        self, track: Track, *, replace: bool = True, start: int = 0, end: int = 0
+    ) -> None:
         """|coro|
 
         Play a audio Track.
@@ -324,26 +340,31 @@ class Player:
 
         self.current = track
 
-        payload = {'op': 'play',
-                   'guildId': str(self.guild_id),
-                   'track': track.id,
-                   'noReplace': no_replace,
-                   'startTime': str(start)
-                   }
+        payload = {
+            "op": "play",
+            "guildId": str(self.guild_id),
+            "track": track.id,
+            "noReplace": no_replace,
+            "startTime": str(start),
+        }
         if end > 0:
-            payload['endTime'] = str(end)
+            payload["endTime"] = str(end)
 
         await self.node._send(**payload)
 
-        __log__.debug(f'PLAYER | Started playing track:: {str(track)} ({self.channel_id})')
+        __log__.debug(
+            f"PLAYER | Started playing track:: {str(track)} ({self.channel_id})"
+        )
 
     async def stop(self) -> None:
         """|coro|
 
         Stop the Player's currently playing song.
         """
-        await self.node._send(op='stop', guildId=str(self.guild_id))
-        __log__.debug(f'PLAYER | Current track stopped:: {str(self.current)} ({self.channel_id})')
+        await self.node._send(op="stop", guildId=str(self.guild_id))
+        __log__.debug(
+            f"PLAYER | Current track stopped:: {str(self.current)} ({self.channel_id})"
+        )
         self.current = None
 
     async def destroy(self, *, force: bool = False) -> None:
@@ -354,7 +375,7 @@ class Player:
         await self.stop()
         await self.disconnect(force=force)
 
-        await self.node._send(op='destroy', guildId=str(self.guild_id))
+        await self.node._send(op="destroy", guildId=str(self.guild_id))
 
         try:
             del self.node.players[self.guild_id]
@@ -374,7 +395,9 @@ class Player:
         equalizer: :class:`Equalizer`
             The Equalizer to set.
         """
-        await self.node._send(op='equalizer', guildId=str(self.guild_id), bands=equalizer.eq)
+        await self.node._send(
+            op="equalizer", guildId=str(self.guild_id), bands=equalizer.eq
+        )
         self._equalizer = equalizer
 
     async def set_equalizer(self, equalizer: Equalizer) -> None:
@@ -394,9 +417,9 @@ class Player:
         pause: bool
             A bool indicating if the player's paused state should be set to True or False.
         """
-        await self.node._send(op='pause', guildId=str(self.guild_id), pause=pause)
+        await self.node._send(op="pause", guildId=str(self.guild_id), pause=pause)
         self.paused = pause
-        __log__.debug(f'PLAYER | Set pause:: {self.paused} ({self.channel_id})')
+        __log__.debug(f"PLAYER | Set pause:: {self.paused} ({self.channel_id})")
 
     async def set_volume(self, vol: int) -> None:
         """|coro|
@@ -409,8 +432,10 @@ class Player:
             The volume to set the player to.
         """
         self.volume = max(min(vol, 1000), 0)
-        await self.node._send(op='volume', guildId=str(self.guild_id), volume=self.volume)
-        __log__.debug(f'PLAYER | Set volume:: {self.volume} ({self.channel_id})')
+        await self.node._send(
+            op="volume", guildId=str(self.guild_id), volume=self.volume
+        )
+        __log__.debug(f"PLAYER | Set volume:: {self.volume} ({self.channel_id})")
 
     async def seek(self, position: int = 0) -> None:
         """Seek to the given position in the song.
@@ -421,7 +446,7 @@ class Player:
             The position as an int in milliseconds to seek to. Could be None to seek to beginning.
         """
 
-        await self.node._send(op='seek', guildId=str(self.guild_id), position=position)
+        await self.node._send(op="seek", guildId=str(self.guild_id), position=position)
 
     async def change_node(self, identifier: str = None) -> None:
         """|coro|
@@ -440,9 +465,11 @@ class Player:
             node = client.get_node(identifier)
 
             if not node:
-                raise audioException(f'No Nodes matching identifier:: {identifier}')
+                raise audioException(f"No Nodes matching identifier:: {identifier}")
             elif node == self.node:
-                raise audioException('Node identifiers must not be the same while changing.')
+                raise audioException(
+                    "Node identifiers must not be the same while changing."
+                )
         else:
             self.node.close()
             node = None
@@ -458,13 +485,13 @@ class Player:
 
             if not node:
                 self.node.open()
-                raise audioException('No Nodes available for changeover.')
+                raise audioException("No Nodes available for changeover.")
 
         self.node.open()
 
         old = self.node
         del old.players[self.guild_id]
-        await old._send(op='destroy', guildId=str(self.guild_id))
+        await old._send(op="destroy", guildId=str(self.guild_id))
 
         self.node = node
         self.node.players[int(self.guild_id)] = self
@@ -473,11 +500,20 @@ class Player:
             await self._dispatch_voice_update()
 
         if self.current:
-            await self.node._send(op='play', guildId=str(self.guild_id), track=self.current.id, startTime=int(self.position))
+            await self.node._send(
+                op="play",
+                guildId=str(self.guild_id),
+                track=self.current.id,
+                startTime=int(self.position),
+            )
             self.last_update = time.time() * 1000
 
             if self.paused:
-                await self.node._send(op='pause', guildId=str(self.guild_id), pause=self.paused)
+                await self.node._send(
+                    op="pause", guildId=str(self.guild_id), pause=self.paused
+                )
 
         if self.volume != 100:
-            await self.node._send(op='volume', guildId=str(self.guild_id), volume=self.volume)
+            await self.node._send(
+                op="volume", guildId=str(self.guild_id), volume=self.volume
+            )

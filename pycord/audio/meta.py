@@ -33,7 +33,7 @@ class audioMixin:
 
         for name, element in inspect.getmembers(cls):
             try:
-                element_listeners = getattr(element, '__audio_listeners__')
+                element_listeners = getattr(element, "__audio_listeners__")
             except AttributeError:
                 continue
 
@@ -48,7 +48,7 @@ class audioMixin:
 
         return self
 
-    async def on_audio_error(self, listener,  error: Exception):
+    async def on_audio_error(self, listener, error: Exception):
         """Event dispatched when an error is raised during mixin listener dispatch.
 
         Parameters
@@ -58,8 +58,10 @@ class audioMixin:
         error: Exception
             The excpetion raised when dispatching a mixin listener.
         """
-        print(f'Ignoring exception in listener {listener}:', file=sys.stderr)
-        traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
+        print(f"Ignoring exception in listener {listener}:", file=sys.stderr)
+        traceback.print_exception(
+            type(error), error, error.__traceback__, file=sys.stderr
+        )
 
     async def on_node_ready(self, node: Node):
         """Listener dispatched when a :class:`audio.node.Node` is connected and ready.
@@ -150,9 +152,10 @@ class audioMixin:
         TypeError
             Listener is not a coroutine.
         """
+
         def wrapper(func):
             if not inspect.iscoroutinefunction(func):
-                raise TypeError('audio listeners must be coroutines.')
+                raise TypeError("audio listeners must be coroutines.")
 
             name = event or func.__name__
 
@@ -162,4 +165,5 @@ class audioMixin:
                 func.__audio_listeners__ = [name]
 
             return func
+
         return wrapper

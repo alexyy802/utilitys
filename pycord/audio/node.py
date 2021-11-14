@@ -57,22 +57,24 @@ class Node:
         The unique indentifier associated with the node.
     """
 
-    def __init__(self, host: str,
-                 port: int,
-                 shards: int,
-                 user_id: int,
-                 *,
-                 client,
-                 session,
-                 rest_uri: str,
-                 password: str,
-                 region: str,
-                 identifier: str,
-                 shard_id: int = None,
-                 secure: bool = False,
-                 heartbeat: float = None,
-                 dumps: Callable[[Dict[str, Any]], Union[str, bytes]] = json.dumps
-                 ):
+    def __init__(
+        self,
+        host: str,
+        port: int,
+        shards: int,
+        user_id: int,
+        *,
+        client,
+        session,
+        rest_uri: str,
+        password: str,
+        region: str,
+        identifier: str,
+        shard_id: int = None,
+        secure: bool = False,
+        heartbeat: float = None,
+        dumps: Callable[[Dict[str, Any]], Union[str, bytes]] = json.dumps,
+    ):
 
         self.host = host
         self.port = port
@@ -101,7 +103,7 @@ class Node:
         self.stats = None
 
     def __repr__(self):
-        return f'{self.identifier} | {self.region} | (Shard: {self.shard_id})'
+        return f"{self.identifier} | {self.region} | (Shard: {self.shard_id})"
 
     @property
     def is_available(self) -> bool:
@@ -125,19 +127,23 @@ class Node:
         return self.stats.penalty.total
 
     async def connect(self, bot: Union[commands.Bot, commands.AutoShardedBot]) -> None:
-        self._websocket = WebSocket(node=self,
-                                    host=self.host,
-                                    port=self.port,
-                                    password=self.password,
-                                    shard_count=self.shards,
-                                    user_id=self.uid,
-                                    secure=self.secure,
-                                    dumps=self._dumps)
+        self._websocket = WebSocket(
+            node=self,
+            host=self.host,
+            port=self.port,
+            password=self.password,
+            shard_count=self.shards,
+            user_id=self.uid,
+            secure=self.secure,
+            dumps=self._dumps,
+        )
         await self._websocket._connect()
 
-        __log__.info(f'NODE | {self.identifier} connected:: {self.__repr__()}')
+        __log__.info(f"NODE | {self.identifier} connected:: {self.__repr__()}")
 
-    async def get_tracks(self, query: str, *, retry_on_failure: bool = True) -> Union[list, TrackPlaylist, None]:
+    async def get_tracks(
+        self, query: str, *, retry_on_failure: bool = True
+    ) -> Union[list, TrackPlaylist, None]:
         """|coro|
 
         Search for and return a list of Tracks for the given query.
@@ -161,40 +167,48 @@ class Node:
         backoff = ExponentialBackoff(base=1)
 
         for attempt in range(5):
-            async with self.session.get(f'{self.rest_uri}/loadtracks?identifier={quote(query)}',
-                                        headers={'Authorization': self.password}) as resp:
+            async with self.session.get(
+                f"{self.rest_uri}/loadtracks?identifier={quote(query)}",
+                headers={"Authorization": self.password},
+            ) as resp:
 
                 if not resp.status == 200 and retry_on_failure:
                     retry = backoff.delay()
 
-                    __log__.info(f'REST | Status code ({resp.status}) while retrieving tracks. '
-                                 f'Attempt {attempt} of 5, retrying in {retry} seconds.')
+                    __log__.info(
+                        f"REST | Status code ({resp.status}) while retrieving tracks. "
+                        f"Attempt {attempt} of 5, retrying in {retry} seconds."
+                    )
 
                     await asyncio.sleep(retry)
                     continue
 
                 elif not resp.status == 200 and not retry_on_failure:
-                    __log__.info(f'REST | Status code ({resp.status}) while retrieving tracks. Not retrying.')
+                    __log__.info(
+                        f"REST | Status code ({resp.status}) while retrieving tracks. Not retrying."
+                    )
                     return
 
                 data = await resp.json()
 
-                if not data['tracks']:
-                    __log__.info(f'REST | No tracks with query <{query}> found.')
+                if not data["tracks"]:
+                    __log__.info(f"REST | No tracks with query <{query}> found.")
                     return None
 
-                if data['playlistInfo']:
+                if data["playlistInfo"]:
                     return TrackPlaylist(data=data)
 
                 tracks = []
-                for track in data['tracks']:
-                    tracks.append(Track(id_=track['track'], info=track['info']))
+                for track in data["tracks"]:
+                    tracks.append(Track(id_=track["track"], info=track["info"]))
 
-                __log__.debug(f'REST | Found <{len(tracks)}> tracks with query <{query}> ({self.__repr__()})')
+                __log__.debug(
+                    f"REST | Found <{len(tracks)}> tracks with query <{query}> ({self.__repr__()})"
+                )
 
                 return tracks
 
-        __log__.warning('REST | Failure to load tracks after 5 attempts.')
+        __log__.warning("REST | Failure to load tracks after 5 attempts.")
 
     async def build_track(self, identifier: str) -> Track:
         """|coro|
@@ -216,14 +230,18 @@ class Node:
         BuildTrackError
             Decoding and building the track failed.
         """
-        async with self.session.get(f'{self.rest_uri}/decodetrack?',
-                                    headers={'Authorization': self.password},
-                                    params={'track': identifier}) as resp:
+        async with self.session.get(
+            f"{self.rest_uri}/decodetrack?",
+            headers={"Authorization": self.password},
+            params={"track": identifier},
+        ) as resp:
             data = await resp.json()
 
             if not resp.status == 200:
-                raise BuildTrackError(f'Failed to build track. Status: {data["status"]}, Error: {data["error"]}.'
-                                      f'Check the identifier is correct and try again.')
+                raise BuildTrackError(
+                    f'Failed to build track. Status: {data["status"]}, Error: {data["error"]}.'
+                    f"Check the identifier is correct and try again."
+                )
 
             track = Track(id_=identifier, info=data)
             return track
@@ -244,7 +262,7 @@ class Node:
 
     async def on_event(self, event) -> None:
         """Function which dispatches events when triggered on the Node."""
-        __log__.info(f'NODE | Event dispatched:: <{str(event)}> ({self.__repr__()})')
+        __log__.info(f"NODE | Event dispatched:: <{str(event)}> ({self.__repr__()})")
         await event.player.hook(event)
 
         if not self.hook:
@@ -267,7 +285,7 @@ class Node:
             The hook provided was not a valid callable.
         """
         if not callable(func):
-            raise audioException('Node hook must be a callable.')
+            raise audioException("Node hook must be a callable.")
 
         self.hook = func
 
@@ -286,5 +304,5 @@ class Node:
         del self._client.nodes[self.identifier]
 
     async def _send(self, **data) -> None:
-        __log__.debug(f'NODE | Sending payload:: <{data}> ({self.__repr__()})')
+        __log__.debug(f"NODE | Sending payload:: <{data}> ({self.__repr__()})")
         await self._websocket._send(**data)
