@@ -62,7 +62,7 @@ class AnvatoIE(InfoExtractor):
         "fs2go_fs2go_tudor_web_prod_a7dd8e5a7cdc830cae55eae6f3e9fee5ee49eb9b": "ipcp87VCEZXPPe868j3orLqzc03oTy7DXsGkAXXH",
         "anvato_mhz_app_web_prod_b808218b30de7fdf60340cbd9831512bc1bf6d37": "Stlm5Gs6BEhJLRTZHcNquyzxGqr23EuFmE5DCgjX",
         "fs2go_charter_charter_web_stage_c2c6e5a68375a1bf00fff213d3ff8f61a835a54c": "Lz4hbJp1fwL6jlcz4M2PMzghM4jp4aAmybtT5dPc",
-        "fs2go_charter_charter_web_prod_ebfe3b10f1af215a7321cd3d629e0b81dfa6fa8c": "vUJsK345A1bVmyYDRhZX0lqFIgVXuqhmuyp1EtPK",
+        "fs2go_charter_charter_web_prod_ebfe3b10f1af215a7321cd3d629e0b81dfa6fa8c": "vUpyc345A1bVmyYDRhZX0lqFIgVXuqhmuyp1EtPK",
         "anvato_epfox_app_web_prod_b3373168e12f423f41504f207000188daf88251b": "GDKq1ixvX3MoBNdU5IOYmYa2DTUXYOozPjrCJnW7",
         "anvato_epfox_app_web_stage_a3c2ce60f8f83ef374a88b68ee73a950f8ab87ce": "2jz2NH4BsXMaDsoJ5qkHMbcczAfIReo2eFYuVC1C",
         "fs2go_verizon_verizon_web_stage_08e6df0354a4803f1b1f2428b5a9a382e8dbcd62": "rKTVapNaAcmnUbGL4ZcuOoY4SE7VmZSQsblPFr7e",

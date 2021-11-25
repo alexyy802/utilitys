@@ -64,11 +64,11 @@ setuptools.setup(
     url="https://github.com/pycord/utilitys",
     version=VERSION,
     packages=[
-        "pycord.audio",
-        "pycord.dl",
-        "pycord.dl.downloader",
-        "pycord.dl.extractor",
-        "pycord.dl.postprocessor"
+        "pycord.ext.audio",
+        "pycord.ext.dl",
+        "pycord.ext.dl.downloader",
+        "pycord.ext.dl.extractor",
+        "pycord.ext.dl.postprocessor"
     ],
     license="MIT",
     description="Utility Plugin For Pycord",

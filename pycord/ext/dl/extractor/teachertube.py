@@ -38,7 +38,7 @@ class TeacherTubeIE(InfoExtractor):
                 "id": "8805",
                 "ext": "mp3",
                 "title": "PER ASPERA AD ASTRA",
-                "description": "RADIJSKA EMISIJA ZRAKOPLOVNE TEHNI?KE ?KOLE P",
+                "description": "RADIpycA EMISIJA ZRAKOPLOVNE TEHNI?KE ?KOLE P",
             },
         },
         {
