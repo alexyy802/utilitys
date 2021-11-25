@@ -9,4 +9,4 @@ Installing:
 
 .. code:: py
 
-    pip install -U git+https://github.com/pycord/audio
+    pip install -U git+https://github.com/pycord/utilitys

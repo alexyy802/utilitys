@@ -1,5 +1,6 @@
 import discord
-import audio
+import pycord
+from pycord import audio
 from discord.ext import commands
 
 
