@@ -1,5 +1,4 @@
-<!--.. image:: logo.jpg
-    :align: center -->
+![Logo](pyc_utils.png)
 
 # Utilitys
 
