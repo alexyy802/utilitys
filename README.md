@@ -14,3 +14,7 @@ pip install -U git+https://github.com/pycord/utilitys@1.1.1
 ### Beta
 
 **This project is currently in BETA**
+
+#### Warning
+
+This module comes With [pycord/pycord](https://github.com/pycord/pycord)
