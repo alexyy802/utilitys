@@ -8,7 +8,7 @@ Utility Plugin For Pycord
 
 
 ```py
-pip install -U git+https://github.com/pycord/utilitys
+pip install -U git+https://github.com/pycord/utilitys@1.1.1
 ```
 
 ### Beta
