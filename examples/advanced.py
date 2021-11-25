@@ -37,7 +37,7 @@ import math
 import random
 import re
 import typing
-import audio
+import pycord.ext.audio as audio
 from discord.ext import commands, menus
 
 # URL matching REGEX...

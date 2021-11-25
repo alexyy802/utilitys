@@ -25,7 +25,7 @@ import itertools
 import re
 import sys
 import traceback
-import audio
+import pycord.ext.audio as audio
 from discord.ext import commands
 from typing import Union
 

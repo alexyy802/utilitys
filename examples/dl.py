@@ -6,7 +6,7 @@ import random
 
 import discord
 import pycord
-from pycord import dl, audio
+from pycord.ext import dl, audio
 from async_timeout import timeout
 from discord.ext import commands
 
