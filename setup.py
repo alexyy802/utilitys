@@ -3,6 +3,7 @@
 """MIT License
 
 Copyright (c) 2019-2020 PythonistaGuild
+Copyright (c) 2021 Devon (Gorialis) R
 Copyright (c) 2021 Pycord
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,7 +69,10 @@ setuptools.setup(
         "pycord.ext.dl",
         "pycord.ext.dl.downloader",
         "pycord.ext.dl.extractor",
-        "pycord.ext.dl.postprocessor"
+        "pycord.ext.dl.postprocessor",
+        'pycord.features', 
+        'pycord.repl', 
+        'pycord.shim'
     ],
     license="MIT",
     description="Utility Plugin For Pycord",
