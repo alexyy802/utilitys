@@ -59,7 +59,7 @@ with open(ROOT / "pycord" / "audio" / "__init__.py", encoding="utf-8") as f:
 
 
 setuptools.setup(
-    name="utilitys",
+    name="PycordUtils",
     author="pycord",
     url="https://github.com/pycord/utilitys",
     version=VERSION,
