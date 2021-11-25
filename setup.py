@@ -68,7 +68,7 @@ setuptools.setup(
         "pycord.dl",
         "pycord.dl.downloader",
         "pycord.dl.extractor",
-        "pycord.dl.postprocesser"
+        "pycord.dl.postprocessor"
     ],
     license="MIT",
     description="Utility Plugin For Pycord",
