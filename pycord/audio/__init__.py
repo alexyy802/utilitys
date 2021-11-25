@@ -1,3 +1,10 @@
+"""
+pycord.audio
+~~~~~~~~~~~~
+Lavalink Module For Pycord
+
+"""
+
 __title__ = "audio"
 __author__ = "pycord"
 __license__ = "MIT"
