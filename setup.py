@@ -3,6 +3,7 @@
 """MIT License
 
 Copyright (c) 2019-2020 PythonistaGuild
+Copyright (c) 2021 Pycord
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -58,13 +59,19 @@ with open(ROOT / "pycord" / "audio" / "__init__.py", encoding="utf-8") as f:
 
 
 setuptools.setup(
-    name="audio",
+    name="utilitys",
     author="pycord",
-    url="https://github.com/pycord/audio",
+    url="https://github.com/pycord/utilitys",
     version=VERSION,
-    packages=["pycord.audio"],
+    packages=[
+        "pycord.audio",
+        "pycord.dl",
+        "pycord.dl.downloader",
+        "pycord.dl.extractor",
+        "pycord.dl.postprocesser"
+    ],
     license="MIT",
-    description="Music and Voice recording for pycord",
+    description="Utility Plugin For Pycord",
     long_description=README,
     include_package_data=True,
     install_requires=REQUIREMENTS,
