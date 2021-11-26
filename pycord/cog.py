@@ -6,6 +6,8 @@ pycord.cog
 
 The pycord debugging and diagnostics cog implementation.
 
+Does **not** include ext's or non-features
+
 :copyright: (c) 2021 Devon (Gorialis) R
 :license: MIT, see LICENSE for more details.
 
