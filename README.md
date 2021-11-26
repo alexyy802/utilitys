@@ -24,10 +24,4 @@ pip install -U git+https://github.com/pycord/utilitys.git
 
 ### pycord/ext/dl is Copyright 2021 Pycord
 
-### pycord/ext/ipc is Copyright 2021 Ext-Creators 2021 Pycord
-
-### pycord/ext/events is Copyright 2021 Ext-Creators & 2021 Pycord
-
-### pycord/ext/alternatives is Copyright 2021 Ext-Creators & 2021 Pycord
-
 ### Some files in /pycord/ is Copyright 2021 Goralis & 2021 Pycord
