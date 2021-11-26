@@ -29,8 +29,9 @@ SOFTWARE.
 import os
 import pathlib
 import re
-
 import setuptools
+
+from pycord.__init__ import __version__
 
 
 ROOT = pathlib.Path(__file__).parent
@@ -50,10 +51,7 @@ ON_RTD = os.getenv("READTHEDOCS") == "True"
 with open(ROOT / "README.md", encoding="utf-8") as f:
     README = f.read()
 
-with open("pycord" / "__init__.py", encoding="utf-8") as f:
-    VERSION = re.search(
-        r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE
-    ).group(1)
+VERSION = __version__
 
 
 setuptools.setup(
