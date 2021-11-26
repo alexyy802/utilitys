@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-"""MIT License
+"""
+MIT License
 
 Copyright (c) 2019-2020 PythonistaGuild
 Copyright (c) 2021 Devon (Gorialis) R
@@ -36,11 +37,12 @@ ROOT = pathlib.Path(__file__).parent
 ON_RTD = os.getenv("READTHEDOCS") == "True"
 
 
-with open(ROOT / "requirements.txt", encoding="utf-8") as f:
-    REQUIREMENTS = f.readlines()
+requirements = []
+with open("requirements.txt") as f:
+    requirements = f.read().splitlines()
 
 if ON_RTD:
-    REQUIREMENTS.extend(
+    requirements.extend(
         (
             "pygments",
             "sphinx==1.7.4",
@@ -78,7 +80,7 @@ setuptools.setup(
     description="Utility Plugin For Pycord",
     long_description=README,
     include_package_data=True,
-    install_requires=REQUIREMENTS,
+    install_requires=requirements,
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
