@@ -36,12 +36,7 @@ import setuptools
 ROOT = pathlib.Path(__file__).parent
 ON_RTD = os.getenv("READTHEDOCS") == "True"
 
-
-requirements = []
-with open("requirements.txt") as f:
-    requirements = f.read().splitlines()
-
-if ON_RTD:
+"""if ON_RTD:
     requirements.extend(
         (
             "pygments",
@@ -50,7 +45,7 @@ if ON_RTD:
             "sphinxcontrib-napoleon",
             "sphinxcontrib-websupport",
         )
-    )
+    )"""
 
 with open(ROOT / "README.md", encoding="utf-8") as f:
     README = f.read()
@@ -80,7 +75,6 @@ setuptools.setup(
     description="Utility Plugin For Pycord",
     long_description=README,
     include_package_data=True,
-    install_requires=requirements,
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
