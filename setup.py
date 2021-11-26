@@ -48,6 +48,10 @@ ON_RTD = os.getenv("READTHEDOCS") == "True"
         )
     )"""
 
+requirements = []
+with open("requirements.txt") as f:
+    requirements = f.read().splitlines()
+
 with open(ROOT / "README.md", encoding="utf-8") as f:
     README = f.read()
 
@@ -73,6 +77,7 @@ setuptools.setup(
     description="Utility Plugin For Pycord",
     long_description=README,
     include_package_data=True,
+    install_requires=requirements,
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
