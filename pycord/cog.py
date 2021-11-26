@@ -31,7 +31,16 @@ __all__ = (
     "setup",
 )
 
-STANDARD_FEATURES = (VoiceFeature, GuildFeature, FilesystemFeature, InvocationFeature, ShellFeature, PythonFeature, ManagementFeature, RootCommand)
+STANDARD_FEATURES = (
+    VoiceFeature,
+    GuildFeature,
+    FilesystemFeature,
+    InvocationFeature,
+    ShellFeature,
+    PythonFeature,
+    ManagementFeature,
+    RootCommand,
+)
 
 OPTIONAL_FEATURES = []
 
@@ -43,7 +52,9 @@ else:
     OPTIONAL_FEATURES.insert(0, YouTubeFeature)
 
 
-class pycord(*OPTIONAL_FEATURES, *STANDARD_FEATURES):  # pylint: disable=too-few-public-methods
+class pycord(
+    *OPTIONAL_FEATURES, *STANDARD_FEATURES
+):  # pylint: disable=too-few-public-methods
     """
     The frontend subclass that mixes in to form the final pycord cog.
     """

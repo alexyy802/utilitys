@@ -25,7 +25,11 @@ class ShellFeature(Feature):
     Feature containing the shell-related commands
     """
 
-    @Feature.Command(parent="pyc", name="shell", aliases=["bash", "sh", "powershell", "ps1", "ps", "cmd"])
+    @Feature.Command(
+        parent="pyc",
+        name="shell",
+        aliases=["bash", "sh", "powershell", "ps1", "ps", "cmd"],
+    )
     async def pyc_shell(self, ctx: commands.Context, *, argument: codeblock_converter):
         """
         Executes statements in the system shell.
@@ -58,7 +62,10 @@ class ShellFeature(Feature):
         Shortcut for 'pyc sh git'. Invokes the system shell.
         """
 
-        return await ctx.invoke(self.pyc_shell, argument=Codeblock(argument.language, "git " + argument.content))
+        return await ctx.invoke(
+            self.pyc_shell,
+            argument=Codeblock(argument.language, "git " + argument.content),
+        )
 
     @Feature.Command(parent="pyc", name="pip")
     async def pyc_pip(self, ctx: commands.Context, *, argument: codeblock_converter):
@@ -66,4 +73,7 @@ class ShellFeature(Feature):
         Shortcut for 'pyc sh pip'. Invokes the system shell.
         """
 
-        return await ctx.invoke(self.pyc_shell, argument=Codeblock(argument.language, "pip " + argument.content))
+        return await ctx.invoke(
+            self.pyc_shell,
+            argument=Codeblock(argument.language, "pip " + argument.content),
+        )
