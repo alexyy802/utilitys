@@ -1,6 +1,6 @@
 import inspect
 
-from pycord.ext import commands
+from discord.ext import commands
 from pycord.ext.alternatives._common import py_allow
 
 
