@@ -1,6 +1,6 @@
 import asyncio
 from discord import Role, ChannelType, InvalidArgument, PermissionOverwrite
-import pycord.abc
+import discord.abc
 
 
 async def _edit(self, options, reason):
