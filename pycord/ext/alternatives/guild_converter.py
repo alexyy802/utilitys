@@ -1,4 +1,4 @@
-from pycord.ext.commands import BadArgument, converter, Context
+from discord.ext.commands import BadArgument, converter, Context
 from discord import Guild, utils
 
 from ._common import _ALL
