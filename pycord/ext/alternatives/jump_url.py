@@ -1,4 +1,4 @@
-import pycord
+import discord
 
 
 @property
