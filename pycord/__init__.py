@@ -11,13 +11,7 @@ __copyright__ = "Copyright 2021 (c) Pycord"
 
 
 from .cog import *
-from .features.baseclass import Feature
-from .flags import Flags
-from .meta import *
 
 __all__ = (
     'pycord',
-    'Feature',
-    'Flags',
-    'setup'
 )
