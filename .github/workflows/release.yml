@@ -1,10 +1,10 @@
 name: Publish to PYPI
 
- on:
+on:
    release:
      types: [published]
 
- jobs:
+jobs:
    process:
      runs-on: ubuntu-latest
      strategy:
