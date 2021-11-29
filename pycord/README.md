@@ -88,7 +88,7 @@ The full reference to The Pycord Cog Extension
             <h4>&gt; <code>jsk [sh|shell] &lt;argument&gt;</code></h4>
             The shell command executes commands within your system shell.
             <br><br>
-            If you're on Linux and are using a custom shell, jishaku will obey the <code>SHELL</code> environment variable, otherwise, it will use <code>/bin/bash</code>.
+            If you're on Linux and are using a custom shell, pycord will obey the <code>SHELL</code> environment variable, otherwise, it will use <code>/bin/bash</code>.
             <br>
             On Windows, pycord will use PowerShell if it's detected, otherwise, it will use Command Prompt.
             <br><br>
