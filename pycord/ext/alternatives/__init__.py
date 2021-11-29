@@ -7,5 +7,4 @@ Pycord extension with additional and alternative features.
 :license: Apache-2.0
 """
 
-
-version = "2021.4.13"
+from . import *
