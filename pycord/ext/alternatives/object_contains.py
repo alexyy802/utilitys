@@ -7,7 +7,7 @@ if discord.version_info < (2, 0, 0):
 else:
     from discord.channel import VocalGuildChannel
 
-from pycord.guild import Guild
+from discord.guild import Guild
 from pycord.member import Member
 from pycord.message import Message
 from pycord.role import Role
