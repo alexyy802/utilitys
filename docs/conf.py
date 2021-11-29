@@ -79,7 +79,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Pycord'
+project = 'Pycord-Utils'
 copyright = '2021 Pycord'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -161,16 +161,18 @@ html_theme = 'basic'
 html_context = {
   'discord_invite': 'https://pycord.dev/discord',
   'discord_extensions': [
-    ('pycord.ext.audio', 'ext/commands'),
-    ('pycord.ext.tasks', 'ext/tasks'),
+    ('pycord.ext.audio', 'ext/audio'),
+    ('pycord.ext.dl', 'ext/dl'),
+    ('pycord.ext.alternatives', 'ext/alternatives'),
+    ('pycord.ext.ipc', 'ext/ipc'),
   ],
 }
 
 resource_links = {
   'discord': 'https://pycord.dev/discord',
-  'issues': 'https://github.com/Pycord-Development/pycord/issues',
-  'discussions': 'https://github.com/Pycord-Development/pycord/discussions',
-  'examples': f'https://github.com/Pycord-Development/pycord/tree/{branch}/examples',
+  'issues': 'https://github.com/pycord/utilitys/issues',
+  'discussions': 'https://github.com/pycord/utilitys/discussions',
+  'examples': f'https://github.com/pycord/utilitys/tree/{branch}/examples',
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme
