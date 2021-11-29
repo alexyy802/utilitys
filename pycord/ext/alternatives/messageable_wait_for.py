@@ -1,7 +1,7 @@
 from pycord.abc import Messageable
 from pycord.message import Message
 import discord
-from pycord.ext import commands
+from discord.ext import commands
 
 
 def wait_for(self, event, *, check=None, timeout=None):
