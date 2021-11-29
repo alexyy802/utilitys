@@ -4,14 +4,14 @@
 
 Utility Plugin For [Pycord](https://github.com/pycord-development/pycord)
 
-## Features:
+# Features:
 
 - Advanced Audio Plug-ins
 - Custom Cog For Easier Bot Use
 - IPC & Alternatives
 - Specialized For Use With Pycord
 
-## Installing:
+# Installing:
 
 ### Stable:
 
@@ -25,7 +25,7 @@ pip install --upgrade pycord-utils
 pip install -U git+https://github.com/pycord/utilitys.git
 ```
 
-## Extra Option's
+# Extra Option's
 
 ### Using our Custom Cog
 
