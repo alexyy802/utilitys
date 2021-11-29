@@ -1,5 +1,5 @@
 from typing import Literal, get_args, get_origin
-from pycord.ext.commands import Command
+from discord.ext.commands import Command
 from pycord.ext.commands.errors import ConversionError, BadArgument
 
 _old_actual_conversion = Command._actual_conversion
