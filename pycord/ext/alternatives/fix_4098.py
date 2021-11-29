@@ -1,5 +1,5 @@
 import asyncio
-from pycord import Role, ChannelType, InvalidArgument, PermissionOverwrite
+from discord import Role, ChannelType, InvalidArgument, PermissionOverwrite
 import pycord.abc
 
 
