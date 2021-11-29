@@ -10,7 +10,7 @@ from pycord.guild import Guild
 from pycord.member import Member
 from pycord.message import Message
 from pycord.role import Role
-from pycord.user import User, BaseUser
+from discord.user import User, BaseUser
 
 
 def _Guild__contains__(self, item):
