@@ -1,7 +1,7 @@
 import collections
 
 import discord
-from pycord.ext import commands
+from discord.ext import commands
 
 
 def _suffix_used(suffix, content):
