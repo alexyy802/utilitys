@@ -2,7 +2,14 @@
 
 # Utilitys
 
-Utility Plugin For Pycord
+Utility Plugin For [Pycord](https://github.com/pycord-development/pycord)
+
+## Features:
+
+- Advanced Audio Plug-ins
+- Custom Cog For Easier Bot Use
+- IPC & Alternatives
+- Specialized For Use With Pycord
 
 ## Installing:
 
