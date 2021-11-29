@@ -71,8 +71,3 @@ async def ping(ctx):
 bot.run("TOKEN")
 ```
 More examples can be found in the examples folder.
-
-
-### Creators
-- VincentRPS [Main Files, IPC Maker, etc]
-- AlexyDaCoder [README.md edit master, Alternative Creator]
