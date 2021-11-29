@@ -49,7 +49,6 @@ To use our Voice Options Install
 
 ```py
 pip install -U pycord-utils[voice]
-
 ```
 
 ### Audio Example
