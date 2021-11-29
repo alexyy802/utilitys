@@ -1,7 +1,7 @@
 import inspect
 
 from discord.ext import commands
-from pycord.ext.alternatives._common import py_allow
+from ._common import py_allow
 
 
 py_allow(3, 9, 0)
