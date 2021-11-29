@@ -1,6 +1,7 @@
 import inspect
 
-from pycord.ext import commands
+from discord.ext import commands
+
 
 
 class ClassGroup(commands.Group):
