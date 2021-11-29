@@ -1,5 +1,7 @@
 # Pycord Command reference
 
+The full reference to The Pycord Cog Extension
+
 <table>
     <tr>
         <td width="60px">
@@ -192,7 +194,15 @@ If you run into such a problem, you can force jishaku to be reinstalled like thi
 > pip install -U --force-reinstall "pycord-utils @ git+https://github.com/pycord/utilitys@main"
 > ```
 
-You **must** have installed jishaku with one of the commands above before doing this else you will probably end up with a broken installation.
+Note:
+
+Remember to download extras
+
+```py
+pip install -U pycord-utils[extra]
+```
+
+You **must** have installed pycord-utils with one of the commands above before doing this else you will probably end up with a broken installation.
 
 ## Acknowledgements
 
