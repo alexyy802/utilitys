@@ -1,4 +1,4 @@
-import pycord
+import discord
 from discord.channel import CategoryChannel, DMChannel, TextChannel
 
 if discord.version_info < (2, 0, 0):
