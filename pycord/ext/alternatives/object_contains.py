@@ -8,9 +8,9 @@ else:
     from discord.channel import VocalGuildChannel
 
 from discord.guild import Guild
-from pycord.member import Member
+from discord.member import Member
 from discord.message import Message
-from pycord.role import Role
+from discord.role import Role
 from discord.user import User, BaseUser
 
 
