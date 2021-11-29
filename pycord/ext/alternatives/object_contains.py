@@ -1,5 +1,5 @@
 import pycord
-from pycord.channel import CategoryChannel, DMChannel, TextChannel
+from discord.channel import CategoryChannel, DMChannel, TextChannel
 
 if pycord.version_info < (1, 7, 0):
     from pycord.channel import VoiceChannel as VocalGuildChannel
