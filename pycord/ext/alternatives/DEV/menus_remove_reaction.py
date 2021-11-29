@@ -1,4 +1,4 @@
-import pycord
+import discord
 from pycord.ext import menus #Not supported yet
 
 
