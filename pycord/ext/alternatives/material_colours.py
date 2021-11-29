@@ -1,4 +1,4 @@
-from pycord.colour import Colour
+from discord.colour import Colour
 
 
 MDIO_COLOURS = {
