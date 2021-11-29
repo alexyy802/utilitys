@@ -1,6 +1,6 @@
 import random
 
-from pycord import CategoryChannel
+from discord import CategoryChannel
 
 
 async def _sort(self, *, key=None, reverse=False):
