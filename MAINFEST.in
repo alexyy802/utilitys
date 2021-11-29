@@ -1,6 +1,7 @@
 include README.rst
 include LICENSE
 include pycord
+include pycord/py.typed
 include pycord/ext/
 include pycord/dl/postprocesser
 include requirements.txt
