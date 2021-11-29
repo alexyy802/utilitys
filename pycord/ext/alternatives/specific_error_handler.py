@@ -1,6 +1,6 @@
 import asyncio
 
-from pycord.ext import commands
+from discord.ext import commands
 
 
 async def on_error(*args):  # cog?, ctx, error
