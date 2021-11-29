@@ -53,6 +53,8 @@ pip install -U pycord-utils[voice]
 
 # Examples
 
+Small Examples For Use-Cases Of The Plug-in
+
 ## Audio Example:
 
 ```py
