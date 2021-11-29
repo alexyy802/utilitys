@@ -1,4 +1,4 @@
-from pycord.ext import commands
+from discord.ext import commands
 
 
 class InlineMeta(type):
