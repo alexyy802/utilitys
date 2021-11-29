@@ -1,8 +1,8 @@
 ![Logo](pyc_utils.png)
 
-[![Documentation Status](https://readthedocs.org/projects/utilitys/badge/?version=latest)](https://utilitys.readthedocs.io/en/latest/?badge=latest)
-
 # Utilitys
+
+[![Documentation Status](https://readthedocs.org/projects/utilitys/badge/?version=latest)](https://utilitys.readthedocs.io/en/latest/?badge=latest)
 
 Utility Plugin For [Pycord](https://github.com/pycord-development/pycord)
 
