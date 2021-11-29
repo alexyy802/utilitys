@@ -1,6 +1,6 @@
 from pycord.abc import Messageable
 from pycord.message import Message
-import pycord
+import discord
 from pycord.ext import commands
 
 
