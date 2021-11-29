@@ -6,13 +6,13 @@ Utility Plugin For Pycord
 
 ## Installing:
 
-## Stable:
+### Stable:
 
 ```py
 pip install --upgrade pycord-utils
 ```
 
-## Development:
+### Development:
 
 ```py
 pip install -U git+https://github.com/pycord/utilitys.git
