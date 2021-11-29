@@ -1,4 +1,4 @@
-from pycord.abc import Messageable
+from discord.abc import Messageable
 from pycord.message import Message
 import discord
 from discord.ext import commands
