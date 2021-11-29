@@ -2,6 +2,9 @@
 pycord.audio
 ~~~~~~~~~~~~
 Lavalink Module For Pycord
+
+:copyright: 2020 PythonistaGuild & 2021 Pycord
+:license: MIT see LICENSE for more info
 """
 
 from .client import Client

@@ -2,6 +2,9 @@
 pycord.dl
 ~~~~~~~~~
 YouTube Video Downloader Specialized For Pycord
+
+:copyright: 2021 Pycord
+:license: MIT see LICENSE for more info
 """
 
 from __future__ import unicode_literals
