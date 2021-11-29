@@ -21,11 +21,7 @@ DEALINGS IN THE SOFTWARE.
 
 -------------------------------------------------------------------------------
 This example uses the following which must be installed prior to running:
-
-    - Discord.py version >= 1.7.1 (pip install -U discord.py)
-    - audio version >= 0.5.1 (pip install -U audio)
-    - menus version >= 1.0.0-a (pip install -U git+https://github.com/Rapptz/discord-ext-menus.git)
-    - Python 3.7+
+    - Python 3.8+
 --------------------------------------------------------------------------------
 """
 import asyncio
@@ -37,7 +33,8 @@ import math
 import random
 import re
 import typing
-import pycord.ext.audio as audio
+import pycord
+from pycord.ext import audio
 from discord.ext import commands, menus
 
 # URL matching REGEX...

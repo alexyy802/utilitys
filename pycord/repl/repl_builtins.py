@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 pycord.repl.repl_builtins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 MIT License
 
@@ -35,18 +33,6 @@ from pycord.__init__ import __version__
 
 
 ROOT = pathlib.Path(__file__).parent
-ON_RTD = os.getenv("READTHEDOCS") == "True"
-
-"""if ON_RTD:
-    requirements.extend(
-        (
-            "pygments",
-            "sphinx==1.7.4",
-            "sphinxcontrib-asyncio",
-            "sphinxcontrib-napoleon",
-            "sphinxcontrib-websupport",
-        )
-    )"""
 
 requirements = []
 with open("requirements.txt") as f:
@@ -57,6 +43,29 @@ with open(ROOT / "README.md", encoding="utf-8") as f:
 
 VERSION = __version__
 
+extras_require = {
+    "voice": [
+        "PyNaCl>=1.3.0,<1.5"
+    ],
+    "extra": [
+        "braceexpand>=0.1.7",
+        "click>=8.0.1",
+        "import_expression>=1.0.0,<2.0.0",
+        "importlib_metadata>=3.7.0",
+    ],
+    "docs": [
+        "sphinx==4.3.0",
+        "sphinxcontrib_trio==1.1.2",
+        "sphinxcontrib-websupport",
+    ],
+    "speed": [
+        "orjson>=3.5.4",
+        "aiodns>=1.1",
+        "Brotlipy",
+        "cchardet",
+    ],
+
+}
 
 setuptools.setup(
     name="Pycord-Utils",
@@ -65,6 +74,8 @@ setuptools.setup(
     version=VERSION,
     packages=[
         "pycord.ext.audio",
+        "pycord.ext.ipc",
+        "pycord.ext.alternatives",
         "pycord.ext.dl",
         "pycord.ext.dl.downloader",
         "pycord.ext.dl.extractor",
@@ -78,6 +89,7 @@ setuptools.setup(
     long_description=README,
     include_package_data=True,
     install_requires=requirements,
+    extras_require=extras_require,
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",

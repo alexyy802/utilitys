@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 pycord.paginators (shim for discord.py 1.7.x)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

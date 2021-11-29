@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
+# TODO: Remake The Docs
 import os
 import sys
 

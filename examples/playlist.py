@@ -5,8 +5,6 @@ Please understand Music bots are complex, and that even this basic example can b
 For this reason it's highly advised you familiarize yourself with discord.py, python and asyncio, BEFORE
 you attempt to write a music bot.
 
-This example makes use of: Python 3.7, audio(https://github.com/EvieePy/audio) and LavaLink.
-
 This is a very basic playlist example, which allows per guild playback of unique queues.
 
 The commands implement very basic logic for basic usage. But allow for expansion. It would be advisable to implement
@@ -25,7 +23,8 @@ import itertools
 import re
 import sys
 import traceback
-import pycord.ext.audio as audio
+import pycord
+from pycord.ext import audio
 from discord.ext import commands
 from typing import Union
 
