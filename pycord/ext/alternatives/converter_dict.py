@@ -1,7 +1,7 @@
 from types import FunctionType
 
 import pycord
-from pycord.ext import commands
+from discord.ext import commands
 from discord.ext.commands import converter, Command
 
 from ._common import _ALL
