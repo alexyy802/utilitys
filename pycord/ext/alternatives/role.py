@@ -1,5 +1,5 @@
 from pycord import Role
-from pycord.abc import Snowflake
+from discord.abc import Snowflake
 from typing import Union, Optional
 
 
