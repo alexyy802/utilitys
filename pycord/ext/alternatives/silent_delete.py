@@ -1,4 +1,4 @@
-import pycord
+import discord
 
 
 _old_delete = discord.Message.delete
