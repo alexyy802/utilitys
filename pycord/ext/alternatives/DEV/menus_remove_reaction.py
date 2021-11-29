@@ -1,5 +1,5 @@
 import discord
-from pycord.ext import menus #Not supported yet
+from discord.ext import menus #Not supported yet
 
 
 _old_update = menus.Menu.update
