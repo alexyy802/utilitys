@@ -1,5 +1,5 @@
 from pycord.ext.commands import BadArgument, converter, Context
-from pycord import Guild, utils
+from discord import Guild, utils
 
 from ._common import _ALL
 
