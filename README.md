@@ -51,7 +51,10 @@ To use our Voice Options Install
 pip install -U pycord-utils[voice]
 ```
 
-### Audio Example
+# Examples
+
+## Audio Example:
+
 ```py
 import discord
 import pycord
