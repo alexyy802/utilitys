@@ -1,4 +1,4 @@
-from pycord import utils, errors, webhook, TextChannel
+from discord import utils, errors, webhook, TextChannel
 import asyncio
 import json
 import aiohttp
