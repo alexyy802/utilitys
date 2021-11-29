@@ -24,12 +24,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-import os
 import pathlib
 import re
-import setuptools
-
-from pycord.__init__ import __version__
+from setuptools import setup
 
 
 ROOT = pathlib.Path(__file__).parent
@@ -41,7 +38,20 @@ with open("requirements.txt") as f:
 with open(ROOT / "README.md", encoding="utf-8") as f:
     README = f.read()
 
-VERSION = __version__
+VERSION = "1.3.0"
+
+packages = [
+        "pycord.ext.audio",
+        "pycord.ext.ipc",
+        "pycord.ext.alternatives",
+        "pycord.ext.dl",
+        "pycord.ext.dl.downloader",
+        "pycord.ext.dl.extractor",
+        "pycord.ext.dl.postprocessor",
+        "pycord.features",
+        "pycord.repl",
+        "pycord.shim",
+    ],
 
 extras_require = {
     "voice": [
@@ -67,23 +77,12 @@ extras_require = {
 
 }
 
-setuptools.setup(
+setup(
     name="Pycord-Utils",
-    author="pycord",
+    author="Pycord",
     url="https://github.com/pycord/utilitys",
     version=VERSION,
-    packages=[
-        "pycord.ext.audio",
-        "pycord.ext.ipc",
-        "pycord.ext.alternatives",
-        "pycord.ext.dl",
-        "pycord.ext.dl.downloader",
-        "pycord.ext.dl.extractor",
-        "pycord.ext.dl.postprocessor",
-        "pycord.features",
-        "pycord.repl",
-        "pycord.shim",
-    ],
+    packages=packages
     license="MIT",
     description="Utility Plugin For Pycord",
     long_description=README,
