@@ -1,4 +1,4 @@
-from pycord.ext.commands import converter, Context, errors, Command
+from discord.ext.commands import converter, Context, errors, Command
 from inspect import Parameter
 from discord import Asset, DiscordException
 import typing
