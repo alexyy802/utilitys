@@ -1,6 +1,6 @@
 from types import FunctionType
 
-import pycord
+import discord
 from discord.ext import commands
 from discord.ext.commands import converter, Command
 
