@@ -1,6 +1,6 @@
-Audio
+pycord.ext.audio
 ===========
-Welcome to Audio Documentation. audio is a Voice And Music Recording Plugin For Pycord.
+Welcome to pycord.ext.audio Documentation Audio is a Music Recording For Pycord.
 
 Installation
 ---------------------------
@@ -29,7 +29,7 @@ A quick and easy bot example:
 
     import discord
     import pycord 
-    from pycord import audio
+    from pycord.ext import audio
     from discord.ext import commands
 
 
@@ -99,51 +99,51 @@ A quick and easy bot example:
 Client
 ----------------------------
 
-.. autoclass:: audio.client.Client
+.. autoclass:: pycord.ext.audio.client.Client
     :members:
 
 
 Node
 ----------------------------
 
-.. autoclass:: audio.node.Node
+.. autoclass:: pycord.ext.audio.node.Node
     :members:
 
 
 Player
 ----------------------------
-.. autoclass:: audio.player.Player
+.. autoclass:: pycord.ext.audio.player.Player
     :members:
 
 
 Track
 ----------------------------
-.. autoclass:: audio.player.Track
+.. autoclass:: pycord.ext.audio.player.Track
     :members:
 
-.. autoclass:: audio.player.TrackPlaylist
+.. autoclass:: pycord.ext.audio.player.TrackPlaylist
     :members:
 
 
 Equalizer
 ----------------------------
-.. autoclass:: audio.eqs.Equalizer
+.. autoclass:: pycord.ext.audio.eqs.Equalizer
     :members:
 
 
 Event Payloads
 ----------------------------
 
-.. autoclass:: audio.events.TrackStart
+.. autoclass:: pycord.ext.audio.events.TrackStart
     :members:
 
-.. autoclass:: audio.events.TrackEnd
+.. autoclass:: pycord.ext.audio.events.TrackEnd
     :members:
 
-.. autoclass:: audio.events.TrackException
+.. autoclass:: pycord.ext.audio.events.TrackException
     :members:
 
-.. autoclass:: audio.events.TrackStuck
+.. autoclass:: pycord.ext.audio.events.TrackStuck
     :members:
 
 
@@ -156,19 +156,19 @@ audioMixin
 .. warning::
     Listeners must be coroutines.
 
-.. autoclass:: audio.meta.audioMixin
+.. autoclass:: pycord.ext.audio.meta.audioMixin
     :members:
 
 
 Errors
 -----------------------
 
-.. autoexception:: audio.errors.audioException
+.. autoexception:: pycord.ext.audio.errors.audioException
 
-.. autoexception:: audio.errors.NodeOccupied
+.. autoexception:: pycord.ext.audio.errors.NodeOccupied
 
-.. autoexception:: audio.errors.InvalidIDProvided
+.. autoexception:: pycord.ext.audio.errors.InvalidIDProvided
 
-.. autoexception:: audio.errors.ZeroConnectedNodes
+.. autoexception:: pycord.ext.audio.errors.ZeroConnectedNodes
 
-.. autoexception:: audio.errors.AuthorizationFailure
+.. autoexception:: pycord.ext.audio.errors.AuthorizationFailure
