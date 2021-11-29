@@ -1,6 +1,6 @@
 import collections
 
-import pycord
+import discord
 from pycord.ext import commands
 
 
