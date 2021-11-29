@@ -9,7 +9,7 @@ else:
 
 from discord.guild import Guild
 from pycord.member import Member
-from pycord.message import Message
+from discord.message import Message
 from pycord.role import Role
 from discord.user import User, BaseUser
 
