@@ -87,6 +87,7 @@ setuptools.setup(
     license="MIT",
     description="Utility Plugin For Pycord",
     long_description=README,
+    long_description_content_type='text/markdown',
     include_package_data=True,
     install_requires=requirements,
     extras_require=extras_require,
