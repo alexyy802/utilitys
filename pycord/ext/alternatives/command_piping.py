@@ -1,4 +1,5 @@
-from pycord.ext import commands
+from discord.ext import commands
+
 
 
 async def invoke(self, ctx):
