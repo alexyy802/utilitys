@@ -64,7 +64,7 @@ extras_require = {
         "importlib_metadata>=3.7.0",
     ],
     "docs": [
-        "sphinx==4.3.0",
+        "sphinx==4.3.1",
         "sphinxcontrib_trio==1.1.2",
         "sphinxcontrib-websupport",
     ],
