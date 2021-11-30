@@ -1,5 +1,5 @@
 import discord
-from ..menus import *
+import ..menus
 
 
 _old_update = menus.Menu.update
