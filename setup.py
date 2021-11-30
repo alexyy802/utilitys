@@ -27,7 +27,13 @@ SOFTWARE.
 import pathlib
 import re
 import setuptools
+from collections import namedtuple
+import pkg_resources
 
+VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
+version_info = VersionInfo(major=1, minor=3, micro=4, releaselevel='final', serial=0)
+__version__ = '.'.join(map(str, (version_info.major, version_info.minor, version_info.micro)))
+pkg_resources.working_set.by_key.pop('onami', None)
 
 ROOT = pathlib.Path(__file__).parent
 
@@ -38,7 +44,7 @@ with open("requirements.txt") as f:
 with open(ROOT / "README.md", encoding="utf-8") as f:
     README = f.read()
 
-VERSION = "1.3.4"
+VERSION = __version__
 
 packages = [
         "pycord.ext.audio",
