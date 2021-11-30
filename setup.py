@@ -25,7 +25,7 @@ SOFTWARE.
 """
 
 import pathlib
-import re
+# import re
 import setuptools
 from collections import namedtuple
 
