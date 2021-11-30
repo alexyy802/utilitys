@@ -30,7 +30,7 @@ import setuptools
 from collections import namedtuple
 
 VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
-version_info = VersionInfo(major=1, minor=3, micro=4, releaselevel='final', serial=0)
+version_info = VersionInfo(major=1, minor=3, micro=5, releaselevel='final', serial=0)
 __version__ = '.'.join(map(str, (version_info.major, version_info.minor, version_info.micro)))
 
 ROOT = pathlib.Path(__file__).parent
@@ -55,7 +55,7 @@ packages = [
         "pycord.features",
         "pycord.repl",
         "pycord.shim",
-    ],
+    ]
 
 extras_require = {
     "voice": [
