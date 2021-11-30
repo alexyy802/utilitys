@@ -1,5 +1,5 @@
 import discord
-from discord.ext import menus #Not supported yet
+from ..menus import *
 
 
 _old_update = menus.Menu.update
