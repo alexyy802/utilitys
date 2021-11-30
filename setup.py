@@ -26,7 +26,7 @@ SOFTWARE.
 
 import pathlib
 import re
-from setuptools import setup
+import setuptools
 
 
 ROOT = pathlib.Path(__file__).parent
@@ -77,7 +77,7 @@ extras_require = {
 
 }
 
-setup(
+setuptools.setup(
     name="Pycord-Utils",
     author="Pycord",
     url="https://github.com/pycord/utilitys",
