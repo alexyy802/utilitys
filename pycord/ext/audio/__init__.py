@@ -12,6 +12,7 @@ from .errors import *
 from .eqs import *
 from .events import *
 from .player import *
+from discord.ext.commands import *
 from .node import Node
 from .meta import audioMixin
 from .websocket import WebSocket
