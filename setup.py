@@ -38,7 +38,7 @@ with open("requirements.txt") as f:
 with open(ROOT / "README.md", encoding="utf-8") as f:
     README = f.read()
 
-VERSION = "1.3.3"
+VERSION = "1.3.4"
 
 packages = [
         "pycord.ext.audio",
