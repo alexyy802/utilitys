@@ -82,7 +82,7 @@ setup(
     author="Pycord",
     url="https://github.com/pycord/utilitys",
     version=VERSION,
-    packages=packages
+    packages=packages,
     license="MIT",
     description="Utility Plugin For Pycord",
     long_description=README,
