@@ -1,6 +1,6 @@
 """
-pycord.audio
-~~~~~~~~~~~~
+pycord.ext.audio
+~~~~~~~~~~~~~~~~
 Lavalink Module For Pycord
 
 :copyright: 2020 PythonistaGuild & 2021 Pycord
