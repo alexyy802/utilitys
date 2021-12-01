@@ -2,7 +2,7 @@ Changelog
 =========
 Changelog of each Version
 
-.. v1p3p0::
+.. _vp1p3p0:
 
 1.3.0
 ------
