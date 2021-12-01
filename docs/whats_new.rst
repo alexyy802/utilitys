@@ -13,6 +13,7 @@ Summary
 V1.3.0 Added 2 New Modules Including every module being Overhauled,
 
 Docs have been Overhauled to look more like Pycord's documentation.
+
 Bugs Fixed
 ~~~~~~~~~~
 
