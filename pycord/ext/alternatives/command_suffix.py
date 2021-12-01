@@ -17,7 +17,9 @@ class Context(commands.Context):
 
     @property
     def valid(self):
-        return (self.suffix is not None or self.prefix is not None) and self.command is not None
+        return (
+            self.suffix is not None or self.prefix is not None
+        ) and self.command is not None
 
     async def reinvoke(self, *, call_hooks=False, restart=True):
         if self.suffix is not None:
@@ -84,7 +86,9 @@ class BotBase(commands.bot.BotBase):
                 )
 
             if not ret:
-                raise ValueError("Iterable command_prefix must contain at least one suffix")
+                raise ValueError(
+                    "Iterable command_prefix must contain at least one suffix"
+                )
 
         return ret
 
@@ -118,7 +122,9 @@ class BotBase(commands.bot.BotBase):
                         if not isinstance(value, str):
                             raise TypeError(
                                 "Iterable command_prefix or list returned from get_prefix must "
-                                "contain only strings, not {}".format(value.__class__.__name__)
+                                "contain only strings, not {}".format(
+                                    value.__class__.__name__
+                                )
                             )
 
                     raise
@@ -130,7 +136,9 @@ class BotBase(commands.bot.BotBase):
                     return ctx
             else:
                 try:
-                    invoked_suffixes = [s for s in suffix if _suffix_used(s, message.content)]
+                    invoked_suffixes = [
+                        s for s in suffix if _suffix_used(s, message.content)
+                    ]
                     if not invoked_suffixes:
                         return ctx
 
@@ -155,7 +163,9 @@ class BotBase(commands.bot.BotBase):
                         if not isinstance(value, str):
                             raise TypeError(
                                 "Iterable command_suffix or list returned from get_suffix must "
-                                "contain only strings, not {}".format(value.__class__.__name__)
+                                "contain only strings, not {}".format(
+                                    value.__class__.__name__
+                                )
                             )
 
                     raise

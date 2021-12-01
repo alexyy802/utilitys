@@ -12,6 +12,4 @@ __copyright__ = "Copyright 2021 (c) Pycord"
 
 from .cog import *
 
-__all__ = (
-    'pycord',
-)
+__all__ = ("pycord",)

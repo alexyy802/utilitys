@@ -17,7 +17,9 @@ def messageable_jump_url(self):
 
     if isinstance(self, discord.abc.User):
         if self.dm_channel is None:
-            raise AttributeError("Could not find DM channel for user '{0}'".format(self))
+            raise AttributeError(
+                "Could not find DM channel for user '{0}'".format(self)
+            )
 
         channel_id = self.dm_channel.id
     else:

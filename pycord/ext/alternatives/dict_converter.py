@@ -146,16 +146,18 @@ async def _parse_arguments(self, ctx):
                     kv_pairs.append(current.split("="))
                 previous = current
             kwargs[name] = {
-                await self.do_conversion(ctx, key_converter, key, param): await self.do_conversion(
-                    ctx, value_converter, value, param
-                )
+                await self.do_conversion(
+                    ctx, key_converter, key, param
+                ): await self.do_conversion(ctx, value_converter, value, param)
                 for (key, value) in kv_pairs
             }
             break
 
     if not self.ignore_extra:
         if not view.eof:
-            raise TooManyArguments("Too many arguments passed to " + self.qualified_name)
+            raise TooManyArguments(
+                "Too many arguments passed to " + self.qualified_name
+            )
 
 
 Command._parse_arguments = _parse_arguments

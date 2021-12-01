@@ -32,13 +32,15 @@ class CheckDecorator:
 
     def __or__(self, other):
         self.check.first = Either(
-            self.check.first, other.check.first if isinstance(other, CheckDecorator) else other
+            self.check.first,
+            other.check.first if isinstance(other, CheckDecorator) else other,
         )
         return self.check
 
     def __and__(self, other):
         self.check.first = Both(
-            self.check.first, other.check.first if isinstance(other, CheckDecorator) else other
+            self.check.first,
+            other.check.first if isinstance(other, CheckDecorator) else other,
         )
         return self.check
 
@@ -68,10 +70,14 @@ class Check:
         return self
 
     def __or__(self, other):
-        return Either(self.predicate, other if isinstance(other, CheckOp) else other.predicate)
+        return Either(
+            self.predicate, other if isinstance(other, CheckOp) else other.predicate
+        )
 
     def __and__(self, other):
-        return Both(self.predicate, other if isinstance(other, CheckOp) else other.predicate)
+        return Both(
+            self.predicate, other if isinstance(other, CheckOp) else other.predicate
+        )
 
 
 commands.core.check = CheckDecorator
@@ -123,9 +129,9 @@ class CheckOp:
         return not r if self.inverted else r
 
     async def _try_call(self, *args, **kwargs):
-        return await self._try_single(self.first, *args, **kwargs), await self._try_single(
-            self.second, *args, **kwargs
-        )
+        return await self._try_single(
+            self.first, *args, **kwargs
+        ), await self._try_single(self.second, *args, **kwargs)
 
     def __invert__(self):
         self.inverted = not self.inverted

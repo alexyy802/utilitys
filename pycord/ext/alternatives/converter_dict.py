@@ -43,9 +43,13 @@ class _ConverterDict(dict):
         super().update(_ALL)
 
     def __setitem__(self, k, v):
-        if not (isinstance(v, FunctionType) or issubclass(v, (*_BUILTINS, converter.Converter))):
+        if not (
+            isinstance(v, FunctionType)
+            or issubclass(v, (*_BUILTINS, converter.Converter))
+        ):
             raise TypeError(
-                "Excepted value of type 'Converter' or built-in, received %r" % v.__name__
+                "Excepted value of type 'Converter' or built-in, received %r"
+                % v.__name__
             )
         super().__setitem__(k, v)
 

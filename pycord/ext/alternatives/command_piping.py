@@ -1,7 +1,6 @@
 from discord.ext import commands
 
 
-
 async def invoke(self, ctx):
     await self.prepare(ctx)
 

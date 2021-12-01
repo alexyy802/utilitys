@@ -25,7 +25,9 @@ webhook.WebhookAdapter.move_webhook = _move_webhook
 # fix up AsyncWebhookAdapter.request to provide token -- was hoping to not need to replace it completely
 
 
-async def _request(self, verb, url, payload=None, multipart=None, *, files=None, token=None):
+async def _request(
+    self, verb, url, payload=None, multipart=None, *, files=None, token=None
+):
     headers = {}
     if token:
         headers["Authorization"] = token
@@ -97,7 +99,8 @@ async def _async_move(self, channel_id, token, payload):
 def _move_to(self, channel):
     if not isinstance(channel, TextChannel):
         raise TypeError(
-            "Expected TextChannel parameter, received %s instead." % channel.__class__.__name__
+            "Expected TextChannel parameter, received %s instead."
+            % channel.__class__.__name__
         )
 
     payload = {"channel_id": channel.id}

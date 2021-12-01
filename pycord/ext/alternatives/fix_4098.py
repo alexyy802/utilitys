@@ -21,16 +21,23 @@ async def _edit(self, options, reason):
         if parent_id is not discord.abc._undefined:
             if lock_permissions:
                 category = self.guild.get_channel(parent_id)
-                options["permission_overwrites"] = [c._asdict() for c in category._overwrites]
+                options["permission_overwrites"] = [
+                    c._asdict() for c in category._overwrites
+                ]
             options["parent_id"] = parent_id
         elif lock_permissions and self.category_id is not None:
             # if we're syncing permissions on a pre-existing channel category without changing it
             # we need to update the permissions to point to the pre-existing category
             category = self.guild.get_channel(self.category_id)
-            options["permission_overwrites"] = [c._asdict() for c in category._overwrites]
+            options["permission_overwrites"] = [
+                c._asdict() for c in category._overwrites
+            ]
     else:
         await self._move(
-            position, parent_id=parent_id, lock_permissions=lock_permissions, reason=reason
+            position,
+            parent_id=parent_id,
+            lock_permissions=lock_permissions,
+            reason=reason,
         )
     overwrites = options.get("overwrites", None)
     if overwrites is not None:
@@ -38,7 +45,9 @@ async def _edit(self, options, reason):
         for target, perm in overwrites.items():
             if not isinstance(perm, PermissionOverwrite):
                 raise InvalidArgument(
-                    "Expected PermissionOverwrite received {0.__name__}".format(type(perm))
+                    "Expected PermissionOverwrite received {0.__name__}".format(
+                        type(perm)
+                    )
                 )
             allow, deny = perm.pair()
             payload = {

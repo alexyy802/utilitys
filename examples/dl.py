@@ -307,9 +307,7 @@ class Music(commands.Cog):
     async def cog_before_invoke(self, ctx: commands.Context):
         ctx.voice_state = self.get_voice_state(ctx)
 
-    async def cog_command_error(
-        self, ctx, error: commands.CommandError
-    ):
+    async def cog_command_error(self, ctx, error: commands.CommandError):
         await ctx.send("An error occurred: {}".format(str(error)))
 
     @commands.command(name="join", invoke_without_subcommand=True)
@@ -325,9 +323,7 @@ class Music(commands.Cog):
 
     @commands.command(name="summon")
     @commands.has_permissions(manage_guild=True)
-    async def _summon(
-        self, ctx, *, channel: discord.VoiceChannel = None
-    ):
+    async def _summon(self, ctx, *, channel: discord.VoiceChannel = None):
         """Summons the bot to a voice channel.
         If no channel was specified, it joins your channel.
         """

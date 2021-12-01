@@ -17,7 +17,9 @@ async def _actual_conversion(self, ctx, converter, argument, param):
 
             raise BadArgument(f"Expected literal: one of {list(map(repr, items))}")
         elif all(i for i in items if not isinstance(i, str)):
-            ret = await _old_actual_conversion(self, ctx, type(items[0]), argument, param)
+            ret = await _old_actual_conversion(
+                self, ctx, type(items[0]), argument, param
+            )
             return ret in items
         else:
             raise ConversionError("Literal contains multiple conflicting types.")

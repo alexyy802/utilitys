@@ -3,7 +3,6 @@ import inspect
 from discord.ext import commands
 
 
-
 class ClassGroup(commands.Group):
     def __init__(self, cls, *, name=None, parent=None):
         kwargs = {"name": name or cls.__name__, "parent": parent}

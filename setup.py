@@ -25,13 +25,16 @@ SOFTWARE.
 """
 
 import pathlib
+
 # import re
 import setuptools
 from collections import namedtuple
 
-VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
-version_info = VersionInfo(major=1, minor=3, micro=5, releaselevel='final', serial=0)
-__version__ = '.'.join(map(str, (version_info.major, version_info.minor, version_info.micro)))
+VersionInfo = namedtuple("VersionInfo", "major minor micro releaselevel serial")
+version_info = VersionInfo(major=1, minor=3, micro=5, releaselevel="final", serial=0)
+__version__ = ".".join(
+    map(str, (version_info.major, version_info.minor, version_info.micro))
+)
 
 ROOT = pathlib.Path(__file__).parent
 
@@ -45,22 +48,20 @@ with open(ROOT / "README.md", encoding="utf-8") as f:
 VERSION = __version__
 
 packages = [
-        "pycord.ext.audio",
-        "pycord.ext.ipc",
-        "pycord.ext.alternatives",
-        "pycord.ext.dl",
-        "pycord.ext.dl.downloader",
-        "pycord.ext.dl.extractor",
-        "pycord.ext.dl.postprocessor",
-        "pycord.features",
-        "pycord.repl",
-        "pycord.shim",
-    ]
+    "pycord.ext.audio",
+    "pycord.ext.ipc",
+    "pycord.ext.alternatives",
+    "pycord.ext.dl",
+    "pycord.ext.dl.downloader",
+    "pycord.ext.dl.extractor",
+    "pycord.ext.dl.postprocessor",
+    "pycord.features",
+    "pycord.repl",
+    "pycord.shim",
+]
 
 extras_require = {
-    "voice": [
-        "PyNaCl>=1.3.0,<1.5"
-    ],
+    "voice": ["PyNaCl>=1.3.0,<1.5"],
     "extra": [
         "braceexpand>=0.1.7",
         "click>=8.0.1",
@@ -78,7 +79,6 @@ extras_require = {
         "Brotlipy",
         "cchardet",
     ],
-
 }
 
 setuptools.setup(
@@ -90,7 +90,7 @@ setuptools.setup(
     license="MIT",
     description="Utility Plugin For Pycord",
     long_description=README,
-    long_description_content_type='text/markdown',
+    long_description_content_type="text/markdown",
     include_package_data=True,
     install_requires=requirements,
     extras_require=extras_require,
