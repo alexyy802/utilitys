@@ -31,7 +31,7 @@ import setuptools
 from collections import namedtuple
 
 VersionInfo = namedtuple("VersionInfo", "major minor micro releaselevel serial")
-version_info = VersionInfo(major=1, minor=3, micro=5, releaselevel="final", serial=0)
+version_info = VersionInfo(major=1, minor=3, micro=6, releaselevel="final", serial=0)
 __version__ = ".".join(
     map(str, (version_info.major, version_info.minor, version_info.micro))
 )
