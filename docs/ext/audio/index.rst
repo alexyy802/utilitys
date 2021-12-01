@@ -1,24 +1,7 @@
-pycord.ext.audio
-===========
-Welcome to pycord.ext.audio Documentation Audio is a Music Recording For Pycord.
+pycord.ext.audio - Music Playing Extension
+==========================================
+Welcome to pycord.ext.audio Documentation Audio is a Music Extension For Pycord.
 
-Installation
----------------------------
-The following commands are currently the valid ways of installing audio.
-
-**Audio requires Python 3.8+**
-
-**Windows**
-
-.. code:: sh
-
-    py -3.8 -m pip install audio
-
-**Linux**
-
-.. code:: sh
-
-    python3.8 -m pip install audio
 
 Getting Started
 ----------------------------

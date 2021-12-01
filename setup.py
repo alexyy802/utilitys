@@ -51,6 +51,7 @@ packages = [
     "pycord.ext.audio",
     "pycord.ext.ipc",
     "pycord.ext.alternatives",
+    "pycord.ext.menus",
     "pycord.ext.dl",
     "pycord.ext.dl.downloader",
     "pycord.ext.dl.extractor",

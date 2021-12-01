@@ -22,6 +22,6 @@ Bugs Fixed
 Features Added
 ~~~~~~~~~~~~~~
 
-- pycord.ext.menus Was added, Since pycord is getting there own Menus our one is Mirroring Pycord's One
+- pycord.ext.menus Was added, Since pycord is getting there own Menus, Our one is Mirroring Pycord's One
 - pycord.ext.ipc Was added, Forking & continuing discord.ext.ipc
 - pycord.ext.alternatives Was added, Forking & continuing discord.ext.alternatives
