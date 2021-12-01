@@ -88,9 +88,7 @@ copyright = '2021 Pycord'
 #
 # The short X.Y version.
 
-version = ''
-with open('../setup.py') as f:
-    version = re.search(r'^VERSION\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
+version = "1.3.5"
 
 # The full version, including alpha/beta/rc tags.
 release = version
