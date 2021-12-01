@@ -27,20 +27,10 @@ These extensions help you during development when it comes to common tasks.
 .. toctree::
   :maxdepth: 1
 
-  ext/commands/index.rst
-  ext/tasks/index.rst
-
-Manuals
----------
-
-These pages go into great detail about everything the API can do.
-
-.. toctree::
-  :maxdepth: 1
-
-  api
-  discord.ext.commands API Reference <ext/commands/api.rst>
-  discord.ext.tasks API Reference <ext/tasks/index.rst>
+  ext/ipc/index.rst
+  ext/dl/index.rst
+  ext/audio/index.rst
+  ext/alternatives/index.rst
 
 Meta
 ------
@@ -52,5 +42,3 @@ If you're looking for something related to the project itself, it's here.
 
   whats_new
   version_guarantees
-  migrating
-
