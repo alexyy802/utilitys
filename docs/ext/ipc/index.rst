@@ -11,12 +11,3 @@ Pycord extension for Inter-process Communication
    client.rst
    errors.rst
    examples.rst
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
