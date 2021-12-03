@@ -26,7 +26,6 @@ SOFTWARE.
 
 import pathlib
 
-# import re
 import setuptools
 from collections import namedtuple
 
@@ -49,8 +48,6 @@ VERSION = __version__
 
 packages = [
     "pycord.ext.audio",
-    "pycord.ext.ipc",
-    "pycord.ext.alternatives",
     "pycord.ext.menus",
     "pycord.ext.dl",
     "pycord.ext.dl.downloader",
