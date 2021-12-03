@@ -161,8 +161,6 @@ html_context = {
     "discord_extensions": [
         ("pycord.ext.audio", "ext/audio"),
         ("pycord.ext.dl", "ext/dl"),
-        # ('pycord.ext.alternatives', 'ext/alternatives'),
-        ("pycord.ext.ipc", "ext/ipc"),
     ],
 }
 
