@@ -9,9 +9,9 @@ Pycord Menu Module
 import discord
 import sys
 
+# Pycord 2.1 Or discord.ext.menus Being Mirrored Here
 try:
     from discord.ext.menus import *
-
 except ImportError:
     print("Unable To Load Menus Module")
     sys.exit()
