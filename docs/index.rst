@@ -9,7 +9,6 @@ Utilitys is a modern Utility plug-in for Pycord
 - Custom Cog System
 - Replit Integration
 - Built-in Audio Downloader
-- Alternatives & IPC Extensions
 
 Getting started
 -----------------
