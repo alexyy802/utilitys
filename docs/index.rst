@@ -27,10 +27,8 @@ These extensions help you during development when it comes to common tasks.
 .. toctree::
   :maxdepth: 1
 
-  ext/ipc/index.rst
   ext/dl/index.rst
   ext/audio/index.rst
-  ext/alternatives/index.rst
 
 Meta
 ------
