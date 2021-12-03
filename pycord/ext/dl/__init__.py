@@ -1,6 +1,6 @@
 """
-pycord.dl
-~~~~~~~~~
+pycord.ext.dl
+~~~~~~~~~~~~~
 YouTube Video Downloader Specialized For Pycord
 
 :copyright: 2021 Pycord

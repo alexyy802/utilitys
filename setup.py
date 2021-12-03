@@ -24,13 +24,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-import os
 import pathlib
-import re
+
 import setuptools
+from collections import namedtuple
 
-from pycord.__init__ import __version__
-
+VersionInfo = namedtuple("VersionInfo", "major minor micro releaselevel serial")
+version_info = VersionInfo(major=1, minor=4, micro=0, releaselevel="final", serial=0)
+__version__ = ".".join(
+    map(str, (version_info.major, version_info.minor, version_info.micro))
+)
 
 ROOT = pathlib.Path(__file__).parent
 
@@ -43,10 +46,20 @@ with open(ROOT / "README.md", encoding="utf-8") as f:
 
 VERSION = __version__
 
+packages = [
+    "pycord.ext.audio",
+    "pycord.ext.menus",
+    "pycord.ext.dl",
+    "pycord.ext.dl.downloader",
+    "pycord.ext.dl.extractor",
+    "pycord.ext.dl.postprocessor",
+    "pycord.features",
+    "pycord.repl",
+    "pycord.shim",
+]
+
 extras_require = {
-    "voice": [
-        "PyNaCl>=1.3.0,<1.5"
-    ],
+    "voice": ["PyNaCl>=1.3.0,<1.5"],
     "extra": [
         "braceexpand>=0.1.7",
         "click>=8.0.1",
@@ -54,7 +67,7 @@ extras_require = {
         "importlib_metadata>=3.7.0",
     ],
     "docs": [
-        "sphinx==4.3.0",
+        "sphinx==4.3.1",
         "sphinxcontrib_trio==1.1.2",
         "sphinxcontrib-websupport",
     ],
@@ -64,29 +77,18 @@ extras_require = {
         "Brotlipy",
         "cchardet",
     ],
-
 }
 
 setuptools.setup(
     name="Pycord-Utils",
-    author="pycord",
+    author="Pycord",
     url="https://github.com/pycord/utilitys",
     version=VERSION,
-    packages=[
-        "pycord.ext.audio",
-        "pycord.ext.ipc",
-        "pycord.ext.alternatives",
-        "pycord.ext.dl",
-        "pycord.ext.dl.downloader",
-        "pycord.ext.dl.extractor",
-        "pycord.ext.dl.postprocessor",
-        "pycord.features",
-        "pycord.repl",
-        "pycord.shim",
-    ],
+    packages=packages,
     license="MIT",
     description="Utility Plugin For Pycord",
     long_description=README,
+    long_description_content_type="text/markdown",
     include_package_data=True,
     install_requires=requirements,
     extras_require=extras_require,
